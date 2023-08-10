@@ -11,4 +11,9 @@ export const ContainerFormLogin = styled.form`
     background-color: var(--color-gray-03);
     padding: 5px 0;
     border-radius: 0.25rem;
+
+    @media (min-width: 568px) {
+        width: 23.0625rem;
+    }
+    
 `

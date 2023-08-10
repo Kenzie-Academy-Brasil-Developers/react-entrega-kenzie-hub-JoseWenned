@@ -1,5 +1,5 @@
 
-import { RouterMain } from "./Router"
+import { RouterMain } from "./router"
 import { GlobalStyle } from "./styles/global"
 import { ResetStyle } from "./styles/reset"
 import 'react-toastify/dist/ReactToastify.css';
