@@ -10,8 +10,8 @@ import { FormSchemaLogin } from "../../components/FormLogin/formSchemaLogin"
 import { useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 import { useEffect, useState } from "react"
-import  {  ToastContainer ,  toast  }  from  'react-toastify' ; 
-import  'react-toastify/dist/ReactToastify.css' ;
+import  {  ToastContainer ,  toast  }  from  "react-toastify" 
+import  "react-toastify/dist/ReactToastify.css" 
  
 export const UserFormLogin = () => {
     
@@ -66,7 +66,7 @@ export const UserFormLogin = () => {
             setUser(data.user)
             setCourseModule(data.user.course_module)
 
-            toast.success('Account successfully registered!', {
+            toast.success("Account successfully registered!", {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -85,7 +85,7 @@ export const UserFormLogin = () => {
             }, 4000)
         }catch(error) {
             setErrorMessage("Invalid e-mail or password")
-            toast.error('Oops! Something went wrong.', {
+            toast.error("Oops! Something went wrong.", {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,

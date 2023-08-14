@@ -88,8 +88,7 @@ export const Tecnologia = () => {
                         <StyleParagraphTech $fontSize="lg">{technology.status}</StyleParagraphTech>
                     </ContainerItemTech>
                 })}
-            </ContainerListTech>,
-
+            </ContainerListTech>
             
         </>
     )

@@ -1,4 +1,4 @@
-import { styled } from "styled-components"; 
+import { styled } from "styled-components"
 
 export const StyleSelect = styled.select`
     background-color: var(--color-gray-02);

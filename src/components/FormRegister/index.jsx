@@ -9,8 +9,8 @@ import { StyleSelect } from "../../styles/select"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FormSchemaRegister } from "../../components/FormRegister/formSchemaRegister"
 import { StyleError } from "../../styles/typography"
-import  {  ToastContainer ,  toast  }  from  'react-toastify' ; 
-import  'react-toastify/dist/ReactToastify.css' ;
+import  {  ToastContainer ,  toast  }  from  "react-toastify" 
+import  "react-toastify/dist/ReactToastify.css" 
 
 export const UserFormRegister = ({ setList }) => {
 
@@ -23,9 +23,9 @@ export const UserFormRegister = ({ setList }) => {
     const createUser = async (formData) => {
         
         try{
-            const {data} = await api.post("/users", formData);
+            const {data} = await api.post("/users", formData)
             
-                toast.success('🦄 Account successfully registered!', {
+                toast.success("Account successfully registered!", {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -34,7 +34,7 @@ export const UserFormRegister = ({ setList }) => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
-                });
+                })
             
         
             setList((list) => [...list, data])
@@ -47,7 +47,7 @@ export const UserFormRegister = ({ setList }) => {
         }catch (error) {
             console.log(error)
             
-                toast.error('🦄 Oops! Something went wrong.', {
+                toast.error("Oops! Something went wrong.", {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -105,7 +105,7 @@ export const UserFormRegister = ({ setList }) => {
             <StyleError $fontSize="md">{errors.course_module?.message}</StyleError>
 
             <StyleButtonRegister $buttonGround="solid"  $buttoSize="md" type="submit">Register</StyleButtonRegister>
-        </ContainerFormRegister>,
+        </ContainerFormRegister>
         <div>
             <ToastContainer />
         </div>

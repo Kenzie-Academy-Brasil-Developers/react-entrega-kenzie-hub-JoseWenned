@@ -16,6 +16,7 @@ export const ContainerListTech = styled.ul`
     justify-items: center;
 
     margin-top: 1.875rem;
+    margin-bottom: 1rem;
     width: 90%;
     height: 50%;
     gap: 50px;
