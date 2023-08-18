@@ -1,12 +1,27 @@
-import React from "react"
-import { StyledParagraph, StyledTitleThree } from "../../styles/typography"
-import { ContainerUserItem } from "../UserItem/style"
+import React, { useContext } from "react"
+import { StyleParagraphCourse, StyleloadUser } from "../../styles/typography"
+import { ContainerUserItem } from "./style"
+import { UserContext } from "../../router/providers/UserContext"
 
-export const UserItem = ({ userName, course_module }) => {
+export const UserItem = () => {
+
+    const { user } = useContext(UserContext)
+
     return(
-        <ContainerUserItem>
-            <StyledTitleThree>{`Welcome ${userName}`}</StyledTitleThree>
-            <StyledParagraph>{course_module}</StyledParagraph>
-        </ContainerUserItem>
+        <>
+            <ContainerUserItem >
+
+             
+                    <div>
+                        <StyleloadUser>Hello, {user?.name}</StyleloadUser>
+                    </div>
+                    <div>
+                        <StyleParagraphCourse>{user?.course_module}</StyleParagraphCourse>
+                    </div>
+           
+
+            </ContainerUserItem>
+        </>
+        
     )
 }

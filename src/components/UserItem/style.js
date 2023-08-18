@@ -1,11 +1,19 @@
 import { styled } from "styled-components";
 
-export const ContainerUserItem = styled.li`
+export const ContainerUserItem = styled.div`
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
-    border-top: 2px solid var(--color-gray-02);
-    border-bottom: 2px solid var(--color-gray-02);
+    height: 400px;
+    width:90%;
+    margin: 0 2rem;
+
+    @media (min-width: 47.5rem) {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
 `
     

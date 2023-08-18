@@ -1,14 +1,13 @@
 import { ContainerTech, ContainerListTech, ContainerItemTech, ModalOverlay, Modal, HeaderModal, FormModal  } from "../Tecnologias/style"
 import { StyleTech, StyleParagraphTech, StyleTitleHeader, StyleRegisterTechnology} from "../../styles/typography"
 import { StyleAddTech } from "../../styles/button"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { api } from "../../services/api"
 import { useForm } from "react-hook-form"
 import { StyleCloseModal, StyleButtonRegister } from "../../styles/button"
 import { StyleLabelModal, StyleLabelSelectModal } from "../../styles/label"
 import { StyleInputModal } from "../../styles/input"
 import { StyleSelect } from "../../styles/select"
-
 
 export const Tecnologia = () => {
 

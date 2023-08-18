@@ -2,16 +2,12 @@
 import { StyleTitleHeader } from "../../styles/typography.js"
 import { StyledLink } from "../../styles/button.js"
 import { ContainerHeader } from "../Header/style.js"
+import { useContext } from "react"
+import { UserContext } from "../../router/providers/UserContext.jsx"
 
 export const Header = () => {
 
-    const handleLogout = () => {
-        localStorage.removeItem("@TOKEN")
-        localStorage.removeItem("@USERID")
-        setUserName("")
-        setLoggedIn(false)
-    }
-    
+    const { handleLogout } = useContext(UserContext)
 
     return(
         <ContainerHeader>

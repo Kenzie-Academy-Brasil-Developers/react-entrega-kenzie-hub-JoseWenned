@@ -8,10 +8,10 @@ export const ContainerFormRegister = styled.form`
     margin-bottom: 1rem;
 
     width: 93%;
-    height: 100vh;
+    height: 50.625rem;
 
     background-color: var(--color-gray-03);
-    padding: 5px 0;
+    padding: 20px 0px;
     border-radius: 0.25rem;
 
     @media (min-width: 568px) {

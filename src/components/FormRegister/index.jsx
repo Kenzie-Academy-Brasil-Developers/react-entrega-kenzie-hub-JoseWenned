@@ -1,71 +1,15 @@
-import { useForm } from "react-hook-form"
-import { api } from "../../services/api"
-import { useNavigate } from "react-router-dom"
+
 import { StyleButtonRegister } from "../../styles/button" 
 import { ContainerFormRegister } from "../FormRegister/style"
 import { StyleLabel } from "../../styles/label"
 import { StyleInput } from "../../styles/input"
 import { StyleSelect } from "../../styles/select" 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { FormSchemaRegister } from "../../components/FormRegister/formSchemaRegister"
 import { StyleError } from "../../styles/typography"
-import  {  ToastContainer ,  toast  }  from  "react-toastify" 
+import  {  ToastContainer  }  from  "react-toastify" 
 import  "react-toastify/dist/ReactToastify.css" 
 
-export const UserFormRegister = ({ setList }) => {
 
-    const { register, handleSubmit, reset, formState:{ errors } } = useForm({
-        resolver: zodResolver(FormSchemaRegister)
-    })
-
-    const navigate = useNavigate()
-
-    const createUser = async (formData) => {
-        
-        try{
-            const {data} = await api.post("/users", formData)
-            
-                toast.success("Account successfully registered!", {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                })
-            
-        
-            setList((list) => [...list, data])
-
-            setTimeout(() =>{
-                navigate("/Login")
-            }, 4000)
-            
-            
-        }catch (error) {
-            console.log(error)
-            
-                toast.error("Oops! Something went wrong.", {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                });
-          
-        }
-    }
- 
-    const submit = (formData) => {
-        
-        createUser(formData)
-        reset()
-    }
+    export const UserFormRegister = ({ submit, handleSubmit, register, errors }) => {
 
     return(
     <>

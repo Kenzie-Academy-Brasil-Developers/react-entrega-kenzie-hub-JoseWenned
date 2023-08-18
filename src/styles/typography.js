@@ -30,6 +30,7 @@ export const TitleStyles = css`
 export const StyledTitleOne = styled.h1`
 
     ${TitleStyles};
+   
 `
 
 export const StyledTitleTwo = styled.h2`
@@ -37,14 +38,16 @@ export const StyledTitleTwo = styled.h2`
     ${TitleStyles};
     color: var(--color-primary);
     margin-top: 4rem;
+   
+   
 `
 
 export const StyledTitleThree = styled.h3`
 
     ${TitleStyles};
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    margin: 1rem auto;
+
 `
 
 export const StyleTitleHeader = styled.h2`
@@ -57,6 +60,11 @@ export const StyleTech = styled.h3`
 export const StyleTitleTech = styled.h2`
     ${TitleStyles};
 `
+export const StyleloadUser = styled.h2`
+    ${TitleStyles};
+    margin-top: 1.5rem;
+`
+
 export const StyleRegisterTechnology = styled.h2`
     ${TitleStyles};
     margin-left: 0.5rem;
@@ -91,10 +99,13 @@ export const StyledParagraph = css`
 `
 
 export const StyleParagraph = styled.p`
-    ${StyledParagraph}
-    margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    ${StyledParagraph};
+    margin: 1rem auto;
+
+    @media (min-width: 47.5rem) {
+       margin-top: 2.5rem;
+    }
+
 `
 
 export const StyleError = styled.p`
@@ -104,4 +115,9 @@ export const StyleError = styled.p`
 `
 export const StyleParagraphTech = styled.p`
     ${StyledParagraph}
+`
+
+export const StyleParagraphCourse = styled.p`
+    ${StyledParagraph}
+    margin-top: 1.5rem;
 `

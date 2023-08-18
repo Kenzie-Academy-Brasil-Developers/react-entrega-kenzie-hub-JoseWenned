@@ -1,10 +1,12 @@
+
 import { Header } from "../../components/Header"
 import { Tecnologia } from "../../components/Tecnologias"
-import { UserList } from "../../components/UserList"
+import { UserItem } from "../../components/UserItem"
 import { ContainerHomePage }from "../HomePage/style"
 import { ContainerList } from "../HomePage/style"
 
-export const Home = ({ userName, course_module }) => {
+export const Home = () => {
+
     return(
         
         <ContainerHomePage>
@@ -12,7 +14,7 @@ export const Home = ({ userName, course_module }) => {
             <Header />
 
             <ContainerList>
-                <UserList userName={userName} course_module={course_module}/>
+                <UserItem />
             </ContainerList>
             
             <Tecnologia />
