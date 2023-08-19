@@ -6,8 +6,8 @@ import { StyledTitleThree, StyleError } from "../../styles/typography"
 import { StyleInput } from "../../styles/input"
 import { StyleParagraph } from "../../styles/typography"
 import { ToastContainer } from "react-toastify"
- 
-export const UserFormLogin = ( { submit, handleSubmit, register, errors } ) => {
+
+export const UserFormLogin = ( { submit ,handleSubmit, register, errors } ) => {
 
     return(
         <>

@@ -8,17 +8,10 @@ export const UserContext = createContext({})
 export const UserProvider = ( { children } ) => {
 
     const [ user, setUser ] = useState(null)
+    const [ course_module, setCourseModule ] = useState("")
+    const [ errorMessage, setErrorMessage ] = useState("")
 
     const navigate = useNavigate()
-
-    // const loadList = async () => {
-    //     try{
-    //         const response = await api.get("/users")
-    //         setUser(response.data)
-    //     }catch (error) {
-    //         console.log(error)
-    //     };
-    // };
 
     const createUser = async (formData) => {
         
@@ -37,9 +30,8 @@ export const UserProvider = ( { children } ) => {
                     theme: "dark",
                 })
             
-        
-            setUser((list) => [...list, data]),
-
+            setUser(data),
+            
             setTimeout(() =>{
                 navigate("/Login")
             }, 4000)
@@ -60,6 +52,53 @@ export const UserProvider = ( { children } ) => {
         }
     }
 
+    const loadUser = async (formData) => {
+    
+        try{
+
+            const response = await api.post("/sessions", formData)
+            const { data } = response
+
+            localStorage.setItem("@TOKEN", data.token)
+            localStorage.setItem("@USERID", data.user.id)
+
+            setUser(data.user)
+            setCourseModule(data.user.course_module)
+            
+
+            toast.success("Successfully login!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+
+            setTimeout(() =>{
+                navigate("/Home")
+            }, 4000)
+            
+
+        }catch(error) {
+
+            setErrorMessage("Invalid e-mail or password")
+            toast.error("Oops! Something went wrong.", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+    
+    }
+
     const handleLogout = () => {
         localStorage.removeItem("@TOKEN"),
         localStorage.removeItem("@USERID"),
@@ -69,7 +108,7 @@ export const UserProvider = ( { children } ) => {
 
     return(
 
-        <UserContext.Provider value={{ handleLogout, setUser, createUser, user}}>
+        <UserContext.Provider value={{ handleLogout, setUser, createUser, user, setErrorMessage, setCourseModule, loadUser}}>
             { children }
         </UserContext.Provider>
 

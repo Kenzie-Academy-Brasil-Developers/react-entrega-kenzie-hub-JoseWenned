@@ -8,18 +8,18 @@ import { ContainerList } from "../HomePage/style"
 export const Home = () => {
 
     return(
-        
-        <ContainerHomePage>
+ 
+            <ContainerHomePage>
 
-            <Header />
+                <Header />
 
-            <ContainerList>
-                <UserItem />
-            </ContainerList>
-            
-            <Tecnologia />
-            
-        </ContainerHomePage>
+                <ContainerList>
+                    <UserItem />
+                </ContainerList>
+
+                <Tecnologia />
+
+            </ContainerHomePage>
         
     )
 }

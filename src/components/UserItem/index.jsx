@@ -8,7 +8,7 @@ export const UserItem = () => {
     const { user } = useContext(UserContext)
 
     return(
-        <>
+        <>  
             <ContainerUserItem >
 
              
