@@ -1,7 +1,7 @@
 import { ContainerTech, ContainerListTech, ContainerItemTech, ModalOverlay, Modal, HeaderModal, FormModal  } from "../Tecnologias/style"
 import { StyleTech, StyleParagraphTech, StyleTitleHeader, StyleRegisterTechnology} from "../../styles/typography"
 import { StyleAddTech } from "../../styles/button"
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { api } from "../../services/api"
 import { useForm } from "react-hook-form"
 import { StyleCloseModal, StyleButtonRegister } from "../../styles/button"
@@ -25,7 +25,6 @@ export const Tecnologia = () => {
             }
     
             const response = await api.post("/users/techs", technologyData)
-            console.log("Technology registered successfully!")
             
             const token = response.data.token
             setToken(token)
@@ -35,7 +34,7 @@ export const Tecnologia = () => {
             reset()
 
         } catch (error) {
-            console.log("Failed to register technology:", error)
+            console.log(error)
         }
     }
 

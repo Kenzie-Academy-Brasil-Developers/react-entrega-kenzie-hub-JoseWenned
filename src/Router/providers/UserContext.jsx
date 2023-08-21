@@ -13,6 +13,40 @@ export const UserProvider = ( { children } ) => {
 
     const navigate = useNavigate()
 
+    useEffect(() => {
+
+        const autoLogin = async () => {
+
+            const token = localStorage.getItem("@TOKEN");
+
+            if(token) {
+
+                try {
+
+                    const response = await api.get("/profile", {
+                        headers: {
+                            Authorization: `Bearer ${token} `
+                        }
+                    })
+
+                    const user = response.data 
+                    setUser(user)
+                    navigate("/Home")
+
+                } catch (error){
+                    console.log(error)
+
+                    localStorage.removeItem("@TOKEN")
+                    setUser(null)
+
+                }
+            }
+        }
+
+        autoLogin()
+
+    }, [])
+
     const createUser = async (formData) => {
         
         try{
