@@ -24,8 +24,9 @@ export const Label = css`
 export const StyleLabel = styled.label`
     ${Label}
     margin-top: 1.5rem;
-    margin-left: 0.7rem;
     margin-bottom: 0.5rem;
+    position: relative;
+    left: 3.5%;
 `
 
 export const StyleLabelModal = styled.label`

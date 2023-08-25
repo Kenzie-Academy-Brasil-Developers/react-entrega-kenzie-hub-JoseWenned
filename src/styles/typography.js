@@ -54,6 +54,11 @@ export const StyleTitleHeader = styled.h2`
     ${TitleStyles};
     color: var(--color-primary);
 `
+export const StyleTitleTechnology = styled.h2`
+     ${TitleStyles};
+     color: var(--color-gray-0);
+`
+
 export const StyleTech = styled.h3`
     ${TitleStyles};
 `
@@ -102,10 +107,6 @@ export const StyleParagraph = styled.p`
     ${StyledParagraph};
     margin: 1rem auto;
 
-    @media (min-width: 47.5rem) {
-       margin-top: 2.5rem;
-    }
-
 `
 
 export const StyleError = styled.p`
@@ -120,4 +121,5 @@ export const StyleParagraphTech = styled.p`
 export const StyleParagraphCourse = styled.p`
     ${StyledParagraph}
     margin-top: 1.5rem;
+    margin-right: 0.5rem;
 `

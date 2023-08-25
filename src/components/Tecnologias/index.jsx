@@ -1,92 +1,37 @@
-import { ContainerTech, ContainerListTech, ContainerItemTech, ModalOverlay, Modal, HeaderModal, FormModal  } from "../Tecnologias/style"
-import { StyleTech, StyleParagraphTech, StyleTitleHeader, StyleRegisterTechnology} from "../../styles/typography"
+import { ContainerTech } from "../Tecnologias/style"
+import { StyleTitleTechnology } from "../../styles/typography"
 import { StyleAddTech } from "../../styles/button"
-import { useState } from "react"
-import { api } from "../../services/api"
-import { useForm } from "react-hook-form"
-import { StyleCloseModal, StyleButtonRegister } from "../../styles/button"
-import { StyleLabelModal, StyleLabelSelectModal } from "../../styles/label"
-import { StyleInputModal } from "../../styles/input"
-import { StyleSelect } from "../../styles/select"
+import { ListTechCard } from "./ListTechCard"
+import { useContext } from "react"
+import { ScrapContext } from "../../router/providers/ScrapTecnologia"
+import { ModalEdit } from "../ModalEdit"
+import { ModalCreateTech } from "../ModalCreateTech"
 
 export const Tecnologia = () => {
 
-    const [ isOpen, setIsOpen ] = useState(false)
-    const { register, handleSubmit, reset } = useForm()
-    const [ technology, setTechnology ] = useState([])
-    const [ token, setToken ] = useState(null)
-
-    const onSubmit = async ( data ) => {
-        
-        try{
-            const technologyData = {
-                name: data.name,
-                status: data.status
-            }
-    
-            const response = await api.post("/users/techs", technologyData)
-            
-            const token = response.data.token
-            setToken(token)
-            localStorage.setItem("@TOKEN", token)
-            
-            setTechnology([...technology, technologyData])
-            reset()
-
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const toggleModal = () => {
-        setIsOpen(!isOpen)
-    }
+    const { toggleModal, editScrap} = useContext(ScrapContext)
 
     return(
         <>
+          
             <ContainerTech>
-                <StyleTitleHeader $fontSize="lg">Technologies</StyleTitleHeader> 
+                <StyleTitleTechnology $fontSize="lg">Technologies</StyleTitleTechnology> 
 
                 <StyleAddTech $buttonSize="lg" onClick={toggleModal}>+</StyleAddTech>
             </ContainerTech>
+      
 
             <div>
-                {isOpen && (
-                    <ModalOverlay onSubmit={handleSubmit(onSubmit)}>
-                        <Modal>
-                            <HeaderModal>
-                                <StyleRegisterTechnology $fontSize="lg">Register technology</StyleRegisterTechnology>
-
-                                <StyleCloseModal type="submit" onClick={toggleModal}>X</StyleCloseModal>
-                            </HeaderModal>
-
-                            <FormModal>
-                                <StyleLabelModal htmlFor="tech" $labelSize="md">Name</StyleLabelModal>
-                                <StyleInputModal  type="text" id="tech" placeholder="Enter your Technology here" {...register("name", {required: true})}/>
-                                
-                                <StyleLabelSelectModal $labelSize="md" htmlFor="select">Select status</StyleLabelSelectModal>
-                                <StyleSelect id="select" {...register("status", {required: true})}>
-                                    <option value="beginner">beginner</option>
-                                    <option value="intermediary">intermediary</option>
-                                    <option value="advanced">advanced</option>
-                                </StyleSelect>
-
-                                <StyleButtonRegister type="submit">Register Technology</StyleButtonRegister>
-                            </FormModal>
-                        </Modal>
-                    </ModalOverlay>
-                )}
+                <ModalCreateTech/>
             </div>
 
-            <ContainerListTech>
-                {technology.map((technology, index) => {
-                    <ContainerItemTech key={index}>
-                        <StyleTech $fontSize="lg">{technology.name}</StyleTech>
+            <div>
+                <ListTechCard />
+            </div>
 
-                        <StyleParagraphTech $fontSize="lg">{technology.status}</StyleParagraphTech>
-                    </ContainerItemTech>
-                })}
-            </ContainerListTech>
+            <div>
+                { editScrap ? <ModalEdit /> : null}
+            </div>
             
         </>
     )

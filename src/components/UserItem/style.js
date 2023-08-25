@@ -6,7 +6,7 @@ export const ContainerUserItem = styled.div`
     flex-direction: column;
 
     height: 400px;
-    width:90%;
+    width: 91%;
     margin: 0 2rem;
 
     @media (min-width: 47.5rem) {

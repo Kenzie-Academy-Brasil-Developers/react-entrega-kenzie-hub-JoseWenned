@@ -8,18 +8,17 @@ export const UserItem = () => {
     const { user } = useContext(UserContext)
 
     return(
+        
         <>  
             <ContainerUserItem >
 
-             
-                    <div>
-                        <StyleloadUser>Hello, {user?.name}</StyleloadUser>
-                    </div>
-                    <div>
-                        <StyleParagraphCourse>{user?.course_module}</StyleParagraphCourse>
-                    </div>
-           
-
+                <div>
+                    <StyleloadUser>Hello, {user?.name}</StyleloadUser>
+                </div>
+                <div>
+                    <StyleParagraphCourse>{user?.course_module}</StyleParagraphCourse>
+                </div>
+        
             </ContainerUserItem>
         </>
         

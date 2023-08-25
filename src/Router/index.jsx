@@ -3,7 +3,7 @@ import { Home } from "../Pages/HomePage"
 import { Register } from "../Pages/UserRegister"
 import { Login } from "../Pages/UserLogin"
 import { ProtectionRoute } from "../components/ProtectionRoute"
-
+import { ScrapProvider } from "../router/providers/ScrapTecnologia"
 
 export const RouterMain = () => {
 
@@ -11,9 +11,14 @@ export const RouterMain = () => {
         
         <Routes>
             <Route path="/" element={<Login />}></Route>
+
             <Route path="/Home" element={<ProtectionRoute/>}> 
-                <Route index element={<Home />}/>
+                <Route index element={ 
+                <ScrapProvider>
+                    <Home />
+                </ScrapProvider>}/>
             </Route>
+
             <Route path="/Login" element={<Login />}/>
             <Route path="/Register" element={<Register />}/>
         </Routes>

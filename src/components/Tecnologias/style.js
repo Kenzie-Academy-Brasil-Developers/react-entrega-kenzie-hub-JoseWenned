@@ -4,12 +4,13 @@ export const ContainerTech = styled.div`
 
     display: flex;
     justify-content: space-between;
-    justify-items: center;
-
-    margin-top: 2.875rem;
+    align-items: center;
+    max-width: 1200px;
     width: 90%;
+    margin-top:2rem;
     
 `
+
 export const ContainerListTech = styled.ul`
 
     display: flex;
@@ -18,7 +19,6 @@ export const ContainerListTech = styled.ul`
 
     margin-top: 1.875rem;
     margin-bottom: 1rem;
-    width: 90%;
     height: 50%;
     gap: 50px;
     background-color: var(--color-gray-02);
@@ -54,13 +54,15 @@ export const ModalOverlay = styled.form`
     animation: modal-slide-down 0.3s ease-in-out forwards;
 
 `
+
 export const Modal = styled.div`
 
     background-color: var(--color-gray-03);
     border-radius: 4px;
 
-    width: 90%;
-    height: 250px;
+    width: 400px;
+    height: 310px;
+    margin: 0 1rem;
 
 `
 export const HeaderModal = styled.div`

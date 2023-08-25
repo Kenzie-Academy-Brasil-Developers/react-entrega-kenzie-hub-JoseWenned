@@ -78,6 +78,12 @@ export const StyleButtonEnter = styled.button`
 
     border: 2px solid var(--color-primary);
     color: var(--color-gray-0);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-primary-negative);
+        border: 2px solid var(--color-primary-negative);
+    }
 `
 
 export const StyleButtonRegister = styled.button`
@@ -91,6 +97,13 @@ export const StyleButtonRegister = styled.button`
 
     border: 2px solid var(--color-primary);
     color: var(--color-gray-0);
+    cursor: pointer;
+    
+    &:hover {
+        background-color: var(--color-primary-negative);
+        border: 2px solid var(--color-primary-negative);
+    }
+
 `
 
 export const StyleButtonRegisterPage= styled(Link)`
@@ -106,17 +119,30 @@ export const StyleButtonRegisterPage= styled(Link)`
     border: 2px solid var(--color-gray-01);
     color: var(--color-gray-0);
     text-decoration: none;
+
+    &:hover {
+        background-color: var(--color-gray-02);
+        border: 2px solid var(--color-gray-02);
+    }
+
 `
 
 export const StyledLink = styled(Link)`
     ${ButtonStyles}
 
-    border: 2px solid var(--color-gray-02);
+    border: 2px solid var(--color-gray-03);
     padding: 0.5rem 1.5rem;
 
-    background-color: var(--color-gray-02);
+    background-color: var(--color-gray-03);
     color: var(--color-gray-0);
     text-decoration: none;
+
+    &:hover {
+        background-color: var(--color-gray-02);
+        border: 2px solid var(--color-gray-02);
+        text-decoration: none;
+    }
+
 `
 
 export const StyleAddTech = styled.button`
@@ -129,11 +155,21 @@ export const StyleAddTech = styled.button`
 
     width: 40px;
     height: 28px;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-gray-02);
+        border: 2px solid var(--color-gray-02);
+        text-decoration: none;
+    }
 `
 export const StyleCloseModal = styled.button`
+
     ${ButtonStyles}
     background-color: transparent;
     margin-right: 0.5rem;
     color: var(--color-gray-01);
     border: none;
+    
 `

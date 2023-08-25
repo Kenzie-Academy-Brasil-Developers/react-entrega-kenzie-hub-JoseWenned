@@ -18,5 +18,6 @@ export const GlobalStyle = createGlobalStyle`
         --font-primary: 'Inter', sans-serif;
 
         --font-size-01: 2rem;
-    }
+        --font-size-02: .875rem;    
+        --font-size-03: .75rem;    }
 `

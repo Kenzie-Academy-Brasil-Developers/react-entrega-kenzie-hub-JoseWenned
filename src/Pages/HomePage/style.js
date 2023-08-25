@@ -20,8 +20,16 @@ export const ContainerList = styled.div`
     margin-top: 1rem;
     height: 150px;
     width: 100%;
+    
+`
+
+export const ContainerUserInformation = styled.div`
+
+    max-width: 1330px;
+    height: 9.375rem;
 
     display: flex;
     justify-content: center;
-    
+    margin: 0.5rem auto;
+
 `
