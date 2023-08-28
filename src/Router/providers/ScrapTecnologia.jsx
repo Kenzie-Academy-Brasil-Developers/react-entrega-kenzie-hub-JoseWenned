@@ -38,20 +38,15 @@ export const ScrapProvider = ( { children } ) => {
         const token = localStorage.getItem("@TOKEN");
 
         try{
-
-            const newScrap = {
-                title: formData.title,
-                status: formData.status,
-                }
         
-            const { data } = await api.post("/users/techs", newScrap, {
+            const { data } = await api.post("/users/techs", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
             
-            setTechnology([...technology, newScrap])
-            localStorage.setItem("@SAVEDTECHNOLOGY", JSON.stringify([...technology, newScrap]))
+            setTechnology([...technology, data])
+            localStorage.setItem("@SAVEDTECHNOLOGY", JSON.stringify([...technology, data]))
 
         }catch (error) {
 

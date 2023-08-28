@@ -20,8 +20,8 @@ export const ItemTechCard =  () => {
                     
                     <ContainerInformation>
                         <TitleLevel>{tech.status}</TitleLevel>
-                        <ButtonTech onClick={() => setEditScrap(tech)}><BiEditAlt/></ButtonTech> 
-                        <ButtonTech onClick={() => deleteTech(tech.id)}><FaRegTrashAlt/></ButtonTech> 
+                        <ButtonTech onClick={() => setEditScrap(tech)}><BiEditAlt /></ButtonTech> 
+                        <ButtonTech onClick={() => deleteTech(tech.id)}><FaRegTrashAlt /></ButtonTech> 
                     </ContainerInformation>
                 </ContainerItem>
                 )
