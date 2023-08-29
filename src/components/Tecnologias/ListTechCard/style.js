@@ -9,6 +9,7 @@ export const Container = styled.div`
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+    border-radius: .25rem;
 
 `
 export const ContainerUl = styled.ul`

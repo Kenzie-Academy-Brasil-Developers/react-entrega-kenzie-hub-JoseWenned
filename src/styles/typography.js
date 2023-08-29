@@ -111,8 +111,11 @@ export const StyleParagraph = styled.p`
 
 export const StyleError = styled.p`
     ${StyledParagraph}
-    margin-left: 0.75rem;
     margin-bottom: 0.5rem;
+    color: var(--color-primary);
+
+    position: relative;
+    left: 3.5%;
 `
 export const StyleParagraphTech = styled.p`
     ${StyledParagraph}

@@ -1,4 +1,4 @@
-import { ModalOverlay, Modal, HeaderModal, FormModal } from "../Tecnologias/style"
+import { ModalOverlay, Modal, HeaderModal, FormModal } from "../ModalEdit/style"
 import { StyleRegisterTechnology } from "../../styles/typography"
 import { StyleCloseModal, StyleButtonRegister } from "../../styles/button"
 import { StyleLabelModal, StyleLabelSelectModal } from "../../styles/label"
