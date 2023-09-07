@@ -15,9 +15,18 @@ export const StyledInput = css`
 export const StyleInput = styled.input`
     ${StyledInput}
     color: var(--color-gray-0);
+
+    &:hover{
+        border: 1px solid var(--color-primary);
+    }
+    
 `
 export const StyleInputModal = styled.input`
     ${StyledInput}
     margin-top: 1rem;
     color: var(--color-gray-0);
+
+    &:hover {
+        border: .0625rem solid var(--color-primary);
+    }
 `

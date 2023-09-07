@@ -15,6 +15,10 @@ export const ContainerItem = styled.li`
 
     border-radius: .25rem;
 
+    &:hover {
+        border: .0625rem solid var(--color-primary);
+    }
+
 `
 
 export const ContainerInformation = styled.div`
