@@ -22,10 +22,15 @@ export const Register = () => {
 
 
     return(
-        <ContainerRegister>
-           <Header />
-           
-           <UserFormRegister submit={submit} handleSubmit={handleSubmit} register={register} errors={errors}/>
-        </ContainerRegister>
+        <>
+            <ContainerRegister>
+              
+                <Header />
+                
+                <UserFormRegister submit={submit} handleSubmit={handleSubmit} register={register} errors={errors}/>
+             
+            </ContainerRegister>
+        </>
+        
     )
 }
