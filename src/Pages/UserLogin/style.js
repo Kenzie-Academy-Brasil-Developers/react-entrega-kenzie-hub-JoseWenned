@@ -7,6 +7,7 @@ export const ContainerLogin = styled.div`
 
     display: flex; 
     flex-direction: column;
+    justisfy-content: center;
     align-items: center;
     
 `
